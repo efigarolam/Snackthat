@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="http://localhost/SnackService/SnackService" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="http://localhost/SnackthatService" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Perfil1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/SnackthatService.pdb" publishTime="05/31/2012 02:29:45" />
+    <file relUrl="bin/SnackthatService.dll" publishTime="05/31/2012 02:29:45" />
+    <file relUrl="SnackthatService.asmx" publishTime="05/31/2012 02:14:59" />
+    <file relUrl="Web.config" publishTime="05/31/2012 03:09:11" />
+  </publishProfile>
+</publishData>

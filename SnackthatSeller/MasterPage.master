@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<meta name="language" content="en" />
+	
+	<link rel="stylesheet" type="text/css" href="<%= webURL %>css/style.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<%= webURL %>css/bootstrap.min.css" />
+    <script type="text/javascript" src="<%= webURL %>js/jquery.js"></script>
+    <title>Snack that!</title>
+</head>
+
+<body>
+	<!-- navbar -->
+	<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                <a class="brand" href="<%= webURL %>Default.aspx">Snack that!</a>
+                <div class="nav-collapse">
+                    <ul id="yw0" class="nav">
+                        <li><a href="<%= webURL %>Default.aspx">Inicio</a></li>
+                        <li><a href="<%= webURL %>views/sync/sync.aspx"><i class="icon-white icon-refresh"></i> Sincronizar</a></li>
+                        <li><a href="<%= webURL %>views/sells/sell.aspx"><i class="icon-white icon-shopping-cart"></i> Vender</a></li>
+                        <li><a href="<%= webURL %>views/sells/viewallsells.aspx"><i class="icon-white icon-list-alt"></i> Ver Ventas</a></li>
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-user"></i> Clientes <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Clientes</li>
+                                <li><a href="<%= webURL %>views/customers/newcustomer.aspx"><i class="icon-plus"></i> Crear Cliente</a></li>
+                                <li><a href="<%= webURL %>views/customers/viewallcustomers.aspx"><i class="icon-list-alt"></i> Ver Clientes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="<%= webURL %>views/products/viewallproducts.aspx"><i class="icon-white icon-eye-open"></i> Consultar Productos</a></li>
+                        <li><a href="<%= webURL %>views/routes/viewroute.aspx"><i class="icon-white icon-road"></i> Consultar Ruta</a></li>
+                    </ul>
+                    <ul class="pull-right nav" id="yw1">
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#">Opciones <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= webURL %>#">Ayuda</a></li>
+                                <li><a href="<%= webURL %>logout.aspx">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>   	
+        
+    <section id="formContent">
+        <div class="container">
+            <div class="span12">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+	<footer>
+		<p class="center">
+			Copyright &copy; 2012 by Snack that!.<br/>
+			All Rights Reserved.<br/>
+		</p>
+	</footer>
+	
+
+    <script type="text/javascript" src="<%= webURL %>js/bootstrap.js"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        jQuery(function($) {
+        jQuery('a.tooltip').tooltip({'placement':'bottom'});
+        jQuery('a[rel="popover"]').popover();
+        jQuery('.collapse').collapse();
+        jQuery('.dropdown-toggle[data-dropdown="dropdown"]').dropdown();
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>

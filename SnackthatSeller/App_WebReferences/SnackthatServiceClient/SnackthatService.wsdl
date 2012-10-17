@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/SnackthatService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/SnackthatService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Snackthat Web Service</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/SnackthatService">
+      <s:element name="getProductsBySeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSeller" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductsBySellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductsBySellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRouteBySeller">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idSeller" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRouteBySellerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRouteBySellerResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSellers">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSellersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSellersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomersByRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRoute" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCustomersByRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomersByRouteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="idRoute" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCustomersResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="setSells">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtProducts">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtSells">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="dtProductsSells">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="idRoute" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setSellsResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getProductsBySellerSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductsBySeller" />
+  </wsdl:message>
+  <wsdl:message name="getProductsBySellerSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductsBySellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRouteBySellerSoapIn">
+    <wsdl:part name="parameters" element="tns:getRouteBySeller" />
+  </wsdl:message>
+  <wsdl:message name="getRouteBySellerSoapOut">
+    <wsdl:part name="parameters" element="tns:getRouteBySellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSellersSoapIn">
+    <wsdl:part name="parameters" element="tns:getSellers" />
+  </wsdl:message>
+  <wsdl:message name="getSellersSoapOut">
+    <wsdl:part name="parameters" element="tns:getSellersResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomersByRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomersByRoute" />
+  </wsdl:message>
+  <wsdl:message name="getCustomersByRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomersByRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:setCustomers" />
+  </wsdl:message>
+  <wsdl:message name="setCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:setCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="setSellsSoapIn">
+    <wsdl:part name="parameters" element="tns:setSells" />
+  </wsdl:message>
+  <wsdl:message name="setSellsSoapOut">
+    <wsdl:part name="parameters" element="tns:setSellsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SnackthatServiceSoap">
+    <wsdl:operation name="getProductsBySeller">
+      <wsdl:input message="tns:getProductsBySellerSoapIn" />
+      <wsdl:output message="tns:getProductsBySellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRouteBySeller">
+      <wsdl:input message="tns:getRouteBySellerSoapIn" />
+      <wsdl:output message="tns:getRouteBySellerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSellers">
+      <wsdl:input message="tns:getSellersSoapIn" />
+      <wsdl:output message="tns:getSellersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersByRoute">
+      <wsdl:input message="tns:getCustomersByRouteSoapIn" />
+      <wsdl:output message="tns:getCustomersByRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCustomers">
+      <wsdl:input message="tns:setCustomersSoapIn" />
+      <wsdl:output message="tns:setCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setSells">
+      <wsdl:input message="tns:setSellsSoapIn" />
+      <wsdl:output message="tns:setSellsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SnackthatServiceSoap" type="tns:SnackthatServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProductsBySeller">
+      <soap:operation soapAction="http://localhost/SnackthatService/getProductsBySeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRouteBySeller">
+      <soap:operation soapAction="http://localhost/SnackthatService/getRouteBySeller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellers">
+      <soap:operation soapAction="http://localhost/SnackthatService/getSellers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersByRoute">
+      <soap:operation soapAction="http://localhost/SnackthatService/getCustomersByRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCustomers">
+      <soap:operation soapAction="http://localhost/SnackthatService/setCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSells">
+      <soap:operation soapAction="http://localhost/SnackthatService/setSells" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SnackthatServiceSoap12" type="tns:SnackthatServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProductsBySeller">
+      <soap12:operation soapAction="http://localhost/SnackthatService/getProductsBySeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRouteBySeller">
+      <soap12:operation soapAction="http://localhost/SnackthatService/getRouteBySeller" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSellers">
+      <soap12:operation soapAction="http://localhost/SnackthatService/getSellers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomersByRoute">
+      <soap12:operation soapAction="http://localhost/SnackthatService/getCustomersByRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCustomers">
+      <soap12:operation soapAction="http://localhost/SnackthatService/setCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setSells">
+      <soap12:operation soapAction="http://localhost/SnackthatService/setSells" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SnackthatService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Snackthat Web Service</wsdl:documentation>
+    <wsdl:port name="SnackthatServiceSoap" binding="tns:SnackthatServiceSoap">
+      <soap:address location="http://localhost/SnackService/SnackthatService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SnackthatServiceSoap12" binding="tns:SnackthatServiceSoap12">
+      <soap12:address location="http://localhost/SnackService/SnackthatService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

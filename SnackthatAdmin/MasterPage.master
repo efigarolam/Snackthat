@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<meta name="language" content="en" />
+	
+	<link rel="stylesheet" type="text/css" href="<%= webURL %>css/style.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<%= webURL %>css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="<%= webURL %>css/bootstrap-responsive.min.css" />
+    <script type="text/javascript" src="<%= webURL %>js/jquery.js"></script>
+    <title>Snack that!</title>
+</head>
+
+<body>
+	<!-- navbar -->   
+	<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                <a class="brand" href="<%= webURL %>Default.aspx">Snack that!</a>
+                <div class="nav-collapse">
+                    <ul id="yw0" class="nav">
+                        <li><a href="<%= webURL %>Default.aspx"><i class="icon-white icon-home"></i> Inicio</a></li>
+                    <% if (Page.User.IsInRole("Gerente"))
+                       { %>
+                       <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-briefcase"></i> Administración <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Administración</li>
+                                <li><a href="<%= webURL %>views/reports/reports.aspx"><i class="icon-print"></i> Reportes</a></li>
+                                <li><a href="<%= webURL %>views/sells/viewallsells.aspx"><i class="icon-th-list"></i> Consultar Ventas Realizadas</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    <% if (Page.User.IsInRole("Gerente"))
+                       { %>
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-user"></i> Usuarios <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Usuarios</li>
+                                <li><a href="<%= webURL %>views/users/newuser.aspx"><i class="icon-plus"></i> Crear Usuarios</a></li>
+                                <li><a href="<%= webURL %>views/users/viewallusers.aspx"><i class="icon-list-alt"></i> Consultar Usuarios</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    <% if (Page.User.IsInRole("Gerente") || Page.User.IsInRole("Jefe"))
+                       { %>
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-folder-open"></i> Clientes <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Clientes</li>
+                                <li><a href="<%= webURL %>views/customers/newcustomer.aspx"><i class="icon-plus"></i> Crear Clientes</a></li>
+                                <li><a href="<%= webURL %>views/customers/viewallcustomers.aspx"><i class="icon-list-alt"></i> Consultar Clientes</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    <% if (Page.User.IsInRole("Gerente") || Page.User.IsInRole("Jefe"))
+                       { %>
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-road"></i> Rutas <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Rutas</li>
+                                <li><a href="<%= webURL %>views/routes/newroute.aspx"><i class="icon-plus"></i> Crear Ruta</a></li>
+                                <li><a href="<%= webURL %>views/routes/viewallroutes.aspx"><i class="icon-list-alt"></i> Consultar Rutas</a></li>
+                                <li><a href="<%= webURL %>views/routes/assignroutes.aspx"><i class="icon-check"></i> Asignar Ruta</a></li>  
+                            </ul>
+                        </li>
+                    <% } %>
+                    <% if (Page.User.IsInRole("Gerente") || Page.User.IsInRole("Inventario"))
+                       { %>
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#"><i class="icon-white icon-shopping-cart"></i> Productos <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-header">Productos</li>
+                                <li><a href="<%= webURL %>views/products/newproduct.aspx"><i class="icon-plus"></i> Crear Producto</a></li>
+                                <li><a href="<%= webURL %>views/products/viewallproducts.aspx"><i class="icon-list-alt"></i> Consultar Productos</a></li>
+                                <li><a href="<%= webURL %>views/products/viewexpiredproducts.aspx"><i class="icon-list-alt"></i> Consultar Productos Caducados</a></li>
+                                <li><a href="<%= webURL %>views/products/setexpiredproducts.aspx"><i class="icon-trash"></i> Dar de Baja Productos Caducados</a></li>
+                                <li><a href="<%= webURL %>views/products/assignproducts.aspx"><i class="icon-check"></i> Registrar Salida</a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    </ul>
+                    <ul class="pull-right nav" id="yw1">
+                        <li class=" dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="<%= webURL %>#">Opciones <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li ><a href="<%= webURL %>#">Ayuda</a></li>
+                                <li ><a href="<%= webURL %>logout.aspx">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="formContent">
+        <div class="container">
+            <div class="span12">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+	<footer>
+		<p class="center">
+			Copyright &copy; 2012 by Snack that!<br/>
+			All Rights Reserved.<br/>
+		</p>
+	</footer>
+
+    <script type="text/javascript" src="<%= webURL %>js/bootstrap.js"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        jQuery(function($) {
+        jQuery('a.tooltip').tooltip({'placement':'bottom'});
+        jQuery('a[rel="popover"]').popover();
+        jQuery('.collapse').collapse();
+        jQuery('.dropdown-toggle[data-dropdown="dropdown"]').dropdown();
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>

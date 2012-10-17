@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Login.master.cs" Inherits="Login" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <title>Snack that!</title>
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a>
+                <a class="brand" href="#">Snack that!</a>
+                <div class="nav-collapse">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="login">
+        <div class="container">	
+            <div class="row">          
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+	
+    <hr />
+	<footer>
+	    <p class="center">
+		    Copyright &copy; 2012 by Snack that!<br />
+			All Rights Reserved.<br /> 
+		</p>
+	</footer>	
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        jQuery(function($) {
+        jQuery('a.tooltip').tooltip({'placement':'bottom'});
+        jQuery('a[rel="popover"]').popover();
+        jQuery('.collapse').collapse();
+        jQuery('.dropdown-toggle[data-dropdown="dropdown"]').dropdown();
+        });
+        /*]]>*/
+    </script>
+</body>
+</html>
